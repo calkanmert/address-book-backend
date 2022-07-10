@@ -2,7 +2,7 @@ import mongoose, { Schema } from 'mongoose';
 
 export interface IUser {
   email: string;
-  password?: string;
+  password: string;
 }
 
 const UserSchema: Schema = new Schema({
