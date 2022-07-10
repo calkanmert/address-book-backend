@@ -4,6 +4,7 @@ import cors from 'cors';
 import config from './config';
 import loaders from './loaders';
 import routes from './routes';
+import result from './utils/result';
 
 config();
 loaders();
@@ -26,5 +27,10 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 app.use('/users', routes.userRoute);
+app.use('/auth', routes.authRoute);
+
+app.use((error: any, req: Request, res: Response, next: NextFunction) => {
+  result(res, 500, 'internal_server_error');
+});
 
 export default app;
