@@ -5,7 +5,7 @@ const createUser = joi.object({
       .email()
       .required()
       .messages({
-        'string.empty': 'EMPTY_FIED',
+        'string.empty': 'EMPTY_FIELD',
         'string.email': 'INVALID_EMAIL',
         'any.required': 'REQUIRED_FIELD',
       }),
