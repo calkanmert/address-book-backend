@@ -4,11 +4,14 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node build/server.js --NODE_ENV=production",
-    "start:dev": "ts-node-dev --files --respawn src/server.ts --NODE_ENV=dev",
+    "start": "node dist/server.js --NODE_ENV=production",
+    "start:dev": "ts-node-dev src/server.ts --files --respawn --NODE_ENV=dev",
     "build": "tsc",
+    "seeder": "node dist/seeders/seeder.js",
+    "seeder-dev": "ts-node src/seeders/seeder.ts",
+    "seeder-clean": "ts-node src/seeders/seeder.ts -c",
     "test": "jest --NODE_ENV=test --config jestconfig.json",
-    "lint": "eslint src/*"
+    "lint": "eslint src/* --fix"
   },
   "author": "mertcalkan",
   "license": "ISC",
