@@ -1,4 +1,6 @@
-import express, { Application, NextFunction, Request, Response } from 'express';
+import express, {
+  Application, NextFunction, Request, Response,
+} from 'express';
 import helmet from 'helmet';
 import cors from 'cors';
 import config from './config';
@@ -18,7 +20,6 @@ app.use(cors({
   origin: '*',
   methods: '*',
 }));
-
 
 app.get('/', (req: Request, res: Response) => {
   res.json({
